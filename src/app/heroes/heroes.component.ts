@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Hero} from "../hero";
-import {FormsModule} from "@angular/forms"
-import {HEROES} from "../mock-heroes"
+// import {FormsModule} from "@angular/forms"
+// import {HEROES} from "../mock-heroes"
 import {HeroService} from "../hero.service"
-import {MessagesService} from "../messages.service";
+// import {MessagesService} from "../messages.service";
 
 
 @Component({
@@ -14,7 +14,7 @@ import {MessagesService} from "../messages.service";
 export class HeroesComponent implements OnInit {
   heroes : Hero[] = [];
 
-  constructor(private heroService: HeroService,private messagesService: MessagesService) {
+  constructor(private heroService: HeroService /*,private messagesService: MessagesService*/) {
   }
 
   getHeroes() {
@@ -25,13 +25,11 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  selectedHero? : Hero;
-
-  onSelect(hero: Hero){
-    this.selectedHero = hero;
-    this.messagesService.add(`HeroComponent: selected hero id=${hero.id}`)
-  }
-
-
+  // selectedHero? : Hero;
+  //
+  // onSelect(hero: Hero){
+  //   this.selectedHero = hero;
+  //   this.messagesService.add(`HeroComponent: selected hero id=${hero.id}`)
+  // }
 
 }
